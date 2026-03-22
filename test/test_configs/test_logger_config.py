@@ -17,7 +17,7 @@ class TestSetupLogger:
     def test_logger_uses_default_name(self) -> None:
         logger = setup_logger()
 
-        assert logger.name == "tkinter-app"
+        assert logger.name == "pygame-app"
 
     def test_logger_has_debug_level(self) -> None:
         logger = setup_logger("debug-test-logger")

@@ -18,7 +18,7 @@ class PlayerModel(pygame.sprite.Sprite):
         super().__init__()
 
         self._walk_index: float = 0.0
-        self._gravity: int = 0
+        self._gravity: float = 0.0
 
         self._walk_frames: list[pygame.Surface] = [
             pygame.image.load(GRAPHIC_PLAYER_WALK_1).convert_alpha(),

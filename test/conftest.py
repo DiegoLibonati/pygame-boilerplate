@@ -41,5 +41,5 @@ def interface_game(default_config: DefaultConfig) -> InterfaceGame:
 
 
 @pytest.fixture
-def mock_keys() -> MockKeys:
+def mock_keys() -> type[MockKeys]:
     return MockKeys
