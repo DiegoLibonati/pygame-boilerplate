@@ -1,4 +1,4 @@
-# Template-Pygame
+# PygameBoilerplate
 
 ## Educational Purpose
 
@@ -24,7 +24,26 @@ The main goal is to explore and demonstrate best practices, patterns, and techno
 
 ## Description
 
-Personal template for creating games with PyGame.
+**PygameBoilerplate** is a starting point for building games with Pygame.
+
+Solves the problem of repeating the same setup and architecture decisions every time a new game project is started: environment config, logging, asset path resolution, build pipeline, and test infrastructure are already in place.
+
+What it includes:
+
+- **Pygame** — game loop, sprite system, input, audio, and rendering
+- **Environment-based config** — `DefaultConfig` hierarchy with `development`, `production`, and `testing` variants selected via `ENVIRONMENT` env var
+- **Structured logging** — `setup_logger()` ready to use across any module
+- **Asset path resolution** — `resource_path()` works both in development and inside a PyInstaller bundle
+- **PyInstaller build** — `app.spec` bundles `src/assets/` and `.env` into a standalone executable
+- **Ruff** — linting and formatting with pre-commit integration
+- **pytest** — configured with markers, `pytest-env`, coverage, and headless Pygame support
+
+How to use it:
+
+1. Clone the repository
+2. Replace the game logic inside `src/models/`, `src/ui/`, and `src/assets/` with your own
+3. Update `ENV_NAME` and the project name in `pyproject.toml`
+4. Keep the config, logging, utils, and build setup as-is or extend them as needed
 
 ## Technologies used
 
@@ -64,8 +83,7 @@ pyinstaller==6.16.0
 
 ## Portfolio link
 
-[`https://www.diegolibonati.com.ar/#/project/Template-Pygame`](https://www.diegolibonati.com.ar/#/project/Template-Pygame)
-
+[`https://www.diegolibonati.com.ar/#/project/pygame-boilerplate`](https://www.diegolibonati.com.ar/#/project/pygame-boilerplate)
 
 ## Testing
 
@@ -121,7 +139,7 @@ ENV_NAME=template_value
 ## Project Structure
 
 ```
-Template-Pygame/
+pygame-boilerplate/
 ├── src/
 │   ├── configs/
 │   │   ├── __init__.py
@@ -148,7 +166,7 @@ Template-Pygame/
 │   │   └── sounds/
 │   ├── __init__.py
 │   └── __main__.py
-├── test/
+├── tests/
 │   ├── test_configs/
 │   │   ├── __init__.py
 │   │   ├── test_default_config.py
@@ -195,8 +213,8 @@ Template-Pygame/
 5. `ui` -> Contains the **game interface logic**. `interface_game.py` acts as the main orchestrator: handles the game loop, event processing, and rendering states (intro / in-game).
 6. `utils` -> Contains **shared utilities**. `helpers.py` provides `resource_path()` to resolve asset paths both in development and inside a PyInstaller bundle.
 7. `assets` -> Static game files: **graphics** (sprites, backgrounds), **sounds** (music, effects), and **fonts**.
-8. `test` -> Contains **tests** organized to mirror the `src/` structure.
-9. `conftest.py` -> Defines **pytest fixtures** for application setup and test data.
+8. `tests/` -> Contains **tests** organized to mirror the `src/` structure.
+9. `conftest.py` -> Defines **pytest fixtures** for application setup and tests data.
 10. `app.py` -> The **application entry point**. Loads the environment, selects the config class, and launches the game.
 11. `pyproject.toml` -> **Unified project configuration** for pytest, ruff, and project metadata.
 12. `requirements.txt` -> Lists **production dependencies**.

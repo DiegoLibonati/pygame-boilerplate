@@ -2,7 +2,7 @@ import logging
 import sys
 
 
-def setup_logger(name: str = "pygame-app") -> logging.Logger:
+def setup_logger(name: str = "pygame-boilerplate") -> logging.Logger:
     logger = logging.getLogger(name)
 
     if not logger.handlers:
