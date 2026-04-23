@@ -39,7 +39,7 @@ class TestInterfaceGameTitle:
 
     @pytest.mark.unit
     def test_title_value(self) -> None:
-        assert InterfaceGame.TITLE == "PythonPygameBoilerplate"
+        assert InterfaceGame.TITLE == "Python Pygame Boilerplate"
 
 
 class TestInterfaceGameInit:

@@ -17,7 +17,7 @@ _COLOR_TEXT = (111, 196, 169)
 
 
 class InterfaceGame:
-    TITLE = "PythonPygameBoilerplate"
+    TITLE = "Python Pygame Boilerplate"
 
     def __init__(self, config: DefaultConfig) -> None:
         pygame.init()

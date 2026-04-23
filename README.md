@@ -1,4 +1,4 @@
-# PythonPygameBoilerplate
+# Python Pygame Boilerplate
 
 ## Educational Purpose
 
@@ -24,7 +24,7 @@ The main goal is to explore and demonstrate best practices, patterns, and techno
 
 ## Description
 
-**PythonPygameBoilerplate** is a starting point for building games with Pygame.
+**Python Pygame Boilerplate** is a starting point for building games with Pygame.
 
 Solves the problem of repeating the same setup and architecture decisions every time a new game project is started: environment config, logging, asset path resolution, build pipeline, and test infrastructure are already in place.
 

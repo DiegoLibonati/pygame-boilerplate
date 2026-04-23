@@ -1,7 +1,7 @@
 [project]
 name = "python-pygame-boilerplate"
 version = "1.0.0"
-description = "PythonPygameBoilerplate is a starting point for building games with Pygame."
+description = "Python Pygame Boilerplate is a starting point for building games with Pygame."
 requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
