@@ -117,6 +117,48 @@ Alternatively, you can run the helper script: `build.bat`
 
 Alternatively, you can run the helper script: `./build.sh`
 
+## Production
+
+For a desktop game built with Pygame, "production" means generating a standalone executable that end users can run without Python installed.
+
+### Checklist
+
+1. **Configure the production environment** — copy `.env.example.prod` to `.env` and set `ENVIRONMENT=production`
+
+```bash
+cp .env.example.prod .env
+```
+
+2. **Run the security audit** — check dependencies for known vulnerabilities
+
+```bash
+pip install -r requirements.dev.txt
+pip-audit -r requirements.txt
+```
+
+3. **Run the test suite** — make sure nothing is broken before building
+
+```bash
+pip install -r requirements.test.txt
+pytest
+```
+
+4. **Build the executable** — generates a standalone binary in `dist/`
+
+```bash
+pip install -r requirements.build.txt
+
+# Windows
+build.bat          # or: pyinstaller app.spec
+
+# Linux / Mac
+./build.sh         # or: pyinstaller app.spec
+```
+
+5. **Distribute** — the output inside `dist/` is self-contained. Assets and `.env` are bundled into the executable by `app.spec`, so no extra files are needed.
+
+> There is no server, Docker, or reverse proxy involved — a Pygame game is a desktop application, not a web service.
+
 ## Security Audit
 
 You can check your dependencies for known vulnerabilities using **pip-audit**.
